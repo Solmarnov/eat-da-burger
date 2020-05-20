@@ -1,7 +1,23 @@
+<img src="/assets/img/Hamburger_PNG_Vector_Clipart.png" width="200">
 <h1>Eat-Da-Burger!</h1>
-<img src="" alt="">
 <form action="add-burger">
-  <label for="burger">Which burger would you like to order?</label>
+  <label for="burger">Which burger would you like to add to your order?</label>
   <input type="text" id="burger">
   <button type="submit">Order</button>
 </form>
+<div class="ordered-burgers">
+  <h2>Ordered burgers</h2>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burger-block devour=true}}
+    {{/unless}}
+  {{/each}}
+</div>
+<div class="devoured-burgers">
+  <h2>Devoured burgers</h2>
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burgers/devour-block}}
+    {{/if}}
+  {{/each}}
+</div>
