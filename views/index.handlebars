@@ -3,7 +3,7 @@
   <h1 class="glow">Eat-Da-Burger!</h1>
 </div>
 
-<form action="add-burger">
+<form class="add-burger">
   <div class="input">
     <input type="text" id="burger">
   </div>
@@ -19,7 +19,7 @@
   <h2>Ordered burgers</h2>
   {{#each burgers}}
     {{#unless devoured}}
-      {{> burgers/burger-block devour=true}}
+      {{> burgers/burger-block devour=false}}
     {{/unless}}
   {{/each}}
 </div>
@@ -28,7 +28,7 @@
   <h2>Devoured burgers</h2>
   {{#each burgers}}
     {{#if devoured}}
-      {{> burgers/devour-block}}
+      {{> burgers/devour-block devour=true}}
     {{/if}}
   {{/each}}
 </div>
