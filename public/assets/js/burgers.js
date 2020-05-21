@@ -21,21 +21,21 @@ $(function() {
   });
 
   $('.devour-burger').on('click', event => {
-    var id = event.target.attributes[1].value;
-    const devoured = event.target.attributes[2].value;
+    const id = event.target.getAttribute("data-id");
+    const devour = event.target.getAttribute("data-devoured");
     
-    console.log("Devoured = " + devoured);
+    console.log("id = " + id);
+    console.log("Devoured = " + devour);
     
     const newDevouredState = {
-      devoured: devoured
+      devoured: devour
     };
     console.log(id);
     $.ajax('api/burgers/' + id, {
       type: 'PUT',
       data: newDevouredState
     })
-    .then(res => {
-      console.log("Burger has been devoured.");
+    .then(() => {
       location.reload();
     });
   });

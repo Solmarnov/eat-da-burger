@@ -19,7 +19,7 @@
   <h2>Ordered burgers</h2>
   {{#each burgers}}
     {{#unless devoured}}
-      {{> burgers/burger-block devour=false}}
+      {{> burgers/burger-block devour=true}}
     {{/unless}}
   {{/each}}
 </div>
@@ -28,7 +28,7 @@
   <h2>Devoured burgers</h2>
   {{#each burgers}}
     {{#if devoured}}
-      {{> burgers/devour-block devour=true}}
+      {{> burgers/devour-block}}
     {{/if}}
   {{/each}}
 </div>
