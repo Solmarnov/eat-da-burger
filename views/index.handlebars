@@ -1,6 +1,6 @@
 <div class="header">
   <img src="/assets/img/Hamburger_PNG_Vector_Clipart.png" width="200">
-  <h1 class="glow">Eat-Da-Burger!</h1>
+  <h1 class="edb-primary">Eat-Da-Burger!</h1>
 </div>
 
 <form class="add-burger">
@@ -11,24 +11,30 @@
     <label for="burger">Add a burger to your order</label>
   </div>
   <div class="button">
-    <button class="primary" type="submit">Place your order</button>
+    <button class="edb-btn-primary" type="submit">Place your order</button>
   </div>
 </form>
 
-<div class="ordered-burgers">
-  <h2>Ordered burgers</h2>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devour=true}}
-    {{/unless}}
-  {{/each}}
-</div>
+<div class="container">
+  <div class="container-item">
+    <div class="ordered-burgers">
+    <h2 class="edb-primary">Ordered burgers</h2>
+    {{#each burgers}}
+      {{#unless devoured}}
+        {{> burgers/burger-block devour=true}}
+      {{/unless}}
+    {{/each}}
+  </div>
+  </div>
 
-<div class="devoured-burgers">
-  <h2>Devoured burgers</h2>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/devour-block}}
-    {{/if}}
-  {{/each}}
+  <div class="container-item">
+    <div class="devoured-burgers">
+    <h2 class="edb-primary">Devoured burgers</h2>
+    {{#each burgers}}
+      {{#if devoured}}
+        {{> burgers/devour-block}}
+      {{/if}}
+    {{/each}}
+  </div>
+  </div>
 </div>

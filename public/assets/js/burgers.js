@@ -12,7 +12,6 @@ $(function() {
       data: newBurger
     })
     .then((res) => {
-      console.log("New burger added to the order. The order number is " + res.id + ".");
       location.replace('/');
     })
     .catch(error => {
@@ -24,13 +23,9 @@ $(function() {
     const id = event.target.getAttribute("data-id");
     const devour = event.target.getAttribute("data-devoured");
     
-    console.log("id = " + id);
-    console.log("Devoured = " + devour);
-    
     const newDevouredState = {
       devoured: devour
     };
-    console.log(id);
     $.ajax('api/burgers/' + id, {
       type: 'PUT',
       data: newDevouredState
